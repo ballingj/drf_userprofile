@@ -6,17 +6,19 @@ drangorestframework=3.15.1
 
 ### starting projects inside vagrant is slightly different
 > venv needs to go to home directory which is /home/vagrant
+
+#### generate and activate venv
 python -m venv ~/venv
 source ~/venv/bin/activate
 
-project file are in /vagrant directory which is different
+> project file are in /vagrant directory which is different
 
-#### start project
+#### Start project
 django-admin startproject profiles_project .
-#### start app
+#### Start app
 python manage.py startapp profiles_api
 
-#### start server in VM using the exposed ip setup in vagrant file
+#### Start server in VM using the exposed ip setup in vagrant file
 python manage.py runserver 0.0.0.0:8000
 
 
