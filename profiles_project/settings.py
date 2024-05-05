@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-w=3r=emq1=t$3pw#glg4n6)_22d&gbc*6c39(tiyc-pe&9pf0w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,11 +40,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'profiles_api.apps.ProfilesApiConfig',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -127,3 +129,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'profiles_api.UserProfile'
+
+# CORS - https://www.stackhawk.com/blog/django-cors-guide/
+# first: pip install django-cors-headers
+# second: cors settings in istalled apps and middleware
+# third: set allowed origins
+# CORS_ALLOWED_ORIGINS = []   #
+CORS_ALLOWED_ORIGINS = ['http://172.17.32.1','http://172.17.45.123','http://127.0.0.1',]
+
+# CORS_ALLOW_ALL_ORIGINS = True
