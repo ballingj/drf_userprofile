@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status, viewsets
+from rest_framework import status, viewsets, filters
 from rest_framework.authentication import TokenAuthentication
 
 
@@ -128,4 +128,8 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = models.UserProfile.objects.all()
     authentication_classes = (TokenAuthentication, )    # this needs to be a tuple hence the comma
     permission_classes = (permissions.UpdateOwnProfile, )   # also needs to be a tuple
-    
+
+    # add a searcheable filter -- # ussage: <endpoint>/?search=test
+    filter_backends = (filters.SearchFilter, )
+    search_fields = ('name', 'email', )
+
