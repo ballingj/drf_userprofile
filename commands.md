@@ -6,9 +6,10 @@
 3. Create the Vagrantfile, but replace the content with the link in Vagrant section below
 4. Start and connect to vagrant VM
 5. Initiate venv in home directory and activate
-6. Install dependencies vie requirements.txt
-7. 
-
+6. Install dependencies via requirements.txt
+7. Start a project and start an app
+8. Update settings.py
+9. Start developing
 
 ### Vagrant 
 Install and initiate vagrant
@@ -66,6 +67,7 @@ INSTALLED_APPS = [
 ]
 ```
 
+### Start Developing
 #### Start server in VM using the exposed ip setup in vagrant file
 ```sh
 python manage.py runserver 0.0.0.0:8000
@@ -107,4 +109,3 @@ MIDDLEWARE = [
  CORS_ALLOWED_ORIGINS = ['http://127.0.0.1'] 
 
  ```
-
