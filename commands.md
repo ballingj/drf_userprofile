@@ -1,7 +1,9 @@
+## This Django project was built inside a VM using vagrant
+
+
 ### Install
 django=5.0.4
-drangorestframework=3.15.1
-
+djangorestframework=3.15.1
 
 
 ### starting projects inside vagrant is slightly different
